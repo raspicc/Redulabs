@@ -1,0 +1,2 @@
+import pyvisa
+def configuration():
