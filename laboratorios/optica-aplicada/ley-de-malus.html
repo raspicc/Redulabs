@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley de Malus</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <script src="ley-de-malus.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../laboratorios.html">Laboratorios Remotos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="teoria">
+        <h1>Ley de Malus</h1>
+        <h2>Teoría</h2>
+        <p>La ley de Malus, llamada así en honor al físico francés Étienne-Louis Malus quien trabajó en la intensidad de la luz y la descubrió en 1809, indica que la intensidad de un rayo de luz polarizado linealmente, que atraviesa un analizador perfecto y de eje óptico vertical equivale a
+           $${I=I_{0}\cos ^{2}\theta _{i}}$$
+        </p>
+    </div>
+    <div class="EquipoExperimental">
+        <h2>Equipo Experimental</h2>
+        <p>Para la elaboración de esté laboratorio remoto se ha utilizado:<br>
+            -Láser: Encargado de otorgar la fuente de luz no polarizada <br>
+            -Sensor de luz: Encargado de medir la intensidad de luz polarizada proveniente del láser. <br>
+            -Polarizadores: Encargados de polarizar la luz provenientes del láser.<br>
+            -Arduino y Rasbperry Pi: Encargados de controlar el hardware y la conexión del experimento a Internet. <br>
+            -Motor Nema 17: Encargado de girar el polarizador a un determinado ángulo.
+
+        </p>
+    </div>
+    <div class="Visualizacion">
+        <h2>Visualización del Experimento</h2>
+        <p>Podrá observar el experimento de manera remota.</p>
+        <div class="camara1"></div>
+    </div>
+    <div class="exp-continuo">
+        <h2>Experimento Continuo</h2>
+        <p>
+            En esta sección se realizará el experimento automáticamente haciendo clic en el botón Iniciar.  
+            Antes de iniciar el experimento debe encender el láser, sensor y motor.</p>
+        <label for="">Láser: </label>
+        <select id="Laserbox">
+            <option value="0">OFF</option>
+            <option value="1">ON</option>
+        </select>
+        <label for="">Sensor: </label>
+        <select id="Sensorbox">
+            <option value="0">OFF</option>
+            <option value="1">ON</option>
+        </select>
+        <label for="">Motor: </label>
+        <select id="Motorbox">
+            <option value="0">OFF</option>
+            <option value="1">ON</option>
+        </select>
+        <button id="Insert_Ok">OK</button>
+        <p>
+            Coloque los limites inferior y superior para los valores de ángulo(θ), así
+            como tamaño de paso entre cada valor.
+    
+        </p>
+        <label for="">θ inferior (°): </label><input type="text" name="" id="Ang_inf"><br><br>
+        <label for="">θ superior (°): </label><input type="text" name="" id="Ang_sup"><br><br>
+        <label for="">Paso (°): </label><input type="text" name="" id="Ang_delta"><br><br>
+        <button id="Insert_ISD">Registrar limites y paso</button>
+   
+        <button id="Start_Exp">Iniciar Experimento</button>
+        <p>Al presionar Nuevo experimento, el modo continuo se deshabilitará.</p>
+        <button id="New_Exp">Nuevo Experimento</button>
+        <button id="Download_Data">Descargar Datos</button>
+    </div>
+    <br><button id="Graficar">Gráficar</button>
+    <div id="grafica">
+        <div class="chartBox" id="container">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+        
+    </div>
+    <div class="exp-discreto">
+        <h2>Experimento Discreto</h2>
+        <p>En esta sección se realizará el experimento enviando valores de ángulo
+            y recibiendo valores de intensidad.Antes de iniciar el experimento debe encender tanto el láser como el sensor. 
+        </p>
+        <label for="">Láser: </label>
+        <select id="Laserbox2">
+            <option value="0">OFF</option>
+            <option value="1">ON</option>
+        </select>
+        <label for="">Sensor: </label>
+        <select id="Sensorbox2">
+            <option value="0">OFF</option>
+            <option value="1">ON</option>
+        </select>
+        <label for="">Motor: </label>
+        <select id="Motorbox2">
+            <option value="0">OFF</option>
+            <option value="1">ON</option>
+        </select>
+        <button id="Insert_Ok2">OK</button>
+        <p>Ingrese el valor del ángulo para obtener el valor de intensidad correspondiente.</p>
+        <label for="">θ (°): </label><input type="text" name="" id="Angulo"><button id="Insert_Angulo">Ingresar</button><br><br>
+        <label for="">I (lumen/m²): </label><input type="text" name="" id="Intensitybox"><button id="Intensity">Recibir</button>
+        
+    </div>
+    
+    <div class="preguntas-respuestas">
+        <h2>Preguntas y Respuestas</h2>
+        <p>1. Cuando el analizador se encuentra girando, ¿Varía la intensidad de la luz?</p>
+        <p>Sí varia, debido a que los ejes de polarización se encuentran formando un ángulo, 
+            esto hace que no sean totalmente perpendiculares
+            y que la luz no pase en su totalidad.
+        </p>
+        <p>2. ¿Se verificó la ley de malus con los valores obtenidos?</p>
+    </div>
+</body>
+</html>
